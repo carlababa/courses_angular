@@ -43,13 +43,13 @@
                       type="text"
                       id="search"
                       name="searchValue"
+                      ng-model="searchValue"
                     />
                     <label class="mdl-textfield__label" htmlFor="search">Search</label>
                   </div>
                 </div>
                 <div class="mdl-cell--12-col mdl-cell--3-col-tablet categories">
                   <h6>Filter by categories</h6>
-                  <!-- {props.categories.map(category => ( -->
                   <div ng-repeat="category in categories">
                     <label
                       class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
@@ -64,7 +64,6 @@
                       <span class="mdl-checkbox__label">{{category.title}}</span>
                     </label>
                   </div>
-                  <!-- ))} -->
                 </div>
                 <div class="mdl-cell--12-col mdl-cell--2-col-tablet">
                   <h6>Filter by price range</h6>
@@ -73,10 +72,10 @@
             </div>
             <div class="mdl-cell mdl-cell--9-col">
               <div class="mdl-grid courses-container">
-                <div class="mdl-cell mdl-cell--4-col">
+                <div ng-repeat="course in courses | filter:searchValue" class="mdl-cell mdl-cell--4-col">
                   <div class="mdl-card mdl-shadow--2dp card">
                     <div class="course-main">
-                      <img alt='course.title' src='course.img' />
+                      <img alt={{course.title}} src={{course.img}} />
                       <h2 class="mdl-card__title-text">{{course.title}}</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
