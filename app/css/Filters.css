@@ -1,0 +1,28 @@
+.rc-slider-handle {
+  background-color: #673ab7;
+  border-color: #673ab7;
+}
+
+.rc-slider-handle:hover {
+  border-color: #fff;
+}
+
+.rc-slider-track {
+  background-color: #673ab7;
+}
+
+.mdl-textfield.search {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.filter-container.mdl-cell {
+  background-color: #E0E0E2;
+  padding: 0 10px 0 10px;
+}
+
+@media (max-width: 839px) and (min-width: 480px) {
+  .categories {
+    padding-left: 35px;
+  }
+}

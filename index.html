@@ -1,0 +1,112 @@
+<!doctype html>
+<html ng-app="Courses" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Courses Angular</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script src="public/vendor.bundle.js"></script>
+    <script src="public/app.bundle.js"></script>
+
+  </head>
+  <body>
+    <div ng-controller="MainCtrl" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Courses Inspired</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+          </nav>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div
+              class="mdl-cell mdl-cell--3-col
+                mdl-cell--12-col-tablet
+                mdl-cell--12-col-phone
+                filter-container"
+            >
+              <div class="mdl-grid">
+                <div class="mdl-cell--12-col mdl-cell--3-col-tablet">
+                  <h5>Filters</h5>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label search">
+                    <input
+                      class="mdl-textfield__input"
+                      type="text"
+                      id="search"
+                      name="searchValue"
+                    />
+                    <label class="mdl-textfield__label" htmlFor="search">Search</label>
+                  </div>
+                </div>
+                <div class="mdl-cell--12-col mdl-cell--3-col-tablet categories">
+                  <h6>Filter by categories</h6>
+                  <!-- {props.categories.map(category => ( -->
+                  <div ng-repeat="category in categories">
+                    <label
+                      class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+                      htmlFor={{category.id}}
+                    >
+                      <input
+                        type="checkbox"
+                        name={{category.id}}
+                        id={{category.id}}
+                        class="mdl-checkbox__input"
+                      />
+                      <span class="mdl-checkbox__label">{{category.title}}</span>
+                    </label>
+                  </div>
+                  <!-- ))} -->
+                </div>
+                <div class="mdl-cell--12-col mdl-cell--2-col-tablet">
+                  <h6>Filter by price range</h6>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--9-col">
+              <div class="mdl-grid courses-container">
+                <div class="mdl-cell mdl-cell--4-col">
+                  <div class="mdl-card mdl-shadow--2dp card">
+                    <div class="course-main">
+                      <img alt='course.title' src='course.img' />
+                      <h2 class="mdl-card__title-text">{{course.title}}</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      {{course.description}}
+                    </div>
+                    <div class="price-container">
+                      <span>{{course.price.toFixed(2)}} &euro;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col">
+              <footer class="footer-container">
+                <div class="footer-text">
+                  <ul>
+                    <li><a href="">Privacy & Terms</a></li>
+                    <li><a href="">Help</a></li>
+                  </ul>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="app/course-app.start.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.page-content {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+  .page-content {
+    width: 1170px;
+  }
+}
